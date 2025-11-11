@@ -2,9 +2,8 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import '../../styles/global.css'; // Tailwind global styles
 
-import Home from './home';
-import Profile from './profile';
-import Settings from './settings'; // Example additional tab, replace if needed
+// import Home from './home'; // Removed because the file does not exist
+// import Settings from './settings'; // Example additional tab, replace if needed
 
 const Layout = () => {
   return (
@@ -21,7 +20,6 @@ const Layout = () => {
       {/* Home Tab */}
       <Tabs.Screen
         name="home"
-        component={Home}
         options={{
           title: 'Home',
         }}
@@ -30,20 +28,17 @@ const Layout = () => {
       {/* Profile Tab */}
       <Tabs.Screen
         name="Profile"
-        component={Profile} // no headerShown option here
         options={{
           title: 'Profile',
         }}
       />
 
-      {/* Settings Tab */}
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="Settings"
-        component={Settings}
         options={{
           title: 'Settings',
         }}
-      />
+      /> */}
     </Tabs>
   );
 };

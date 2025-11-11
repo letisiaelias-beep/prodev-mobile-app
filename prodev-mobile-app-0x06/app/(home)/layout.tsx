@@ -2,9 +2,10 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import '../../styles/global.css'; // Correct path to Tailwind styles
 
-import Home from './home'; // Example, replace with actual Home screen
 import Profile from './profile';
-import Settings from './settings'; // Example, replace with actual Settings screen
+// Removed Settings import because the settings route should be resolved by the Expo Router file-system routing.
+// If you have a Settings component file and want to import it directly, replace this line with:
+// import Settings from './settings';
 
 const Layout = () => {
   return (
@@ -21,7 +22,6 @@ const Layout = () => {
       {/* Home Tab */}
       <Tabs.Screen
         name="home"
-        component={Home}
         options={{ title: 'Home' }}
       />
 
@@ -34,7 +34,6 @@ const Layout = () => {
       {/* Settings Tab */}
       <Tabs.Screen
         name="settings"
-        component={Settings}
         options={{ title: 'Settings' }}
       />
     </Tabs>
