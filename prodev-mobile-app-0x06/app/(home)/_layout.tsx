@@ -1,44 +1,21 @@
-import { Tabs } from 'expo-router';
 import React from 'react';
+import { Tabs } from 'expo-router';
 import '../../styles/global.css'; // Tailwind global styles
-
-// import Home from './home'; // Removed because the file does not exist
-// import Settings from './settings'; // Example additional tab, replace if needed
 
 const Layout = () => {
   return (
     <Tabs
       screenOptions={{
-        headerShown: true, // default header for all screens, Profile will override if needed
+        headerShown: true,              // header shown for all tabs
         tabBarActiveTintColor: '#34967C',
         tabBarInactiveTintColor: 'gray',
-        tabBarStyle: {
-          backgroundColor: '#fff',
-        },
+        tabBarStyle: { backgroundColor: '#fff' },
       }}
     >
-      {/* Home Tab */}
-      <Tabs.Screen
-        name="home"
-        options={{
-          title: 'Home',
-        }}
-      />
-
-      {/* Profile Tab */}
-      <Tabs.Screen
-        name="Profile"
-        options={{
-          title: 'Profile',
-        }}
-      />
-
-      {/* <Tabs.Screen
-        name="Settings"
-        options={{
-          title: 'Settings',
-        }}
-      /> */}
+      {/* The 'name' must exactly match the file name in app/(home)/ */}
+      <Tabs.Screen name="home" options={{ title: 'Home' }} />
+      <Tabs.Screen name="profile" options={{ title: 'Profile' }} />
+      <Tabs.Screen name="settings" options={{ title: 'Settings' }} />
     </Tabs>
   );
 };
